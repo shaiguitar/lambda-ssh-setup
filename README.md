@@ -65,3 +65,6 @@ The entry point of the python lambda code is `main.py`. Please refer to that fil
 
 ![df-output](images/works.png?raw=true "df-output")
 
+# Other info
+
+https://aws.amazon.com/blogs/compute/scheduling-ssh-jobs-using-aws-lambda/
