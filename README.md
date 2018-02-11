@@ -33,13 +33,13 @@ terraform apply
 
 # Synopsis
 
-The order of terraform execution essentially does (in a VPC environment):
+The order of terraform execution in a VPC environment is essentially:
 
-1) IAM permissions for lambda.
-2) Creates SSH key via an exteral tf module, uploads to aws, will use key in lambda code (a directory with a `main.py` that exists here and will be zipped later) to ssh to it from lambda.
-3) Create Instance to ssh to (with SSH key from step 2).
-4) Use local-exec hooks on ssh creation to create zip files with the necessary data: ssh keys & ip address info.
-4) Upload Lambda zip/archived code at the very end of the above process.
+- IAM permissions for lambda.
+- Creates SSH key via an exteral tf module, uploads to aws, will use key in lambda code (`main.py` that exists here and will be zipped later) to ssh to it from lambda.
+- Create Instance to ssh to (with SSH key from step 2).
+- local-exec hooks on ssh creation to create zip files with the necessary data: ssh keys & ip address info.
+- Lambda zip/archived code at the very end of the above process.
 
 Then:
 
@@ -47,7 +47,7 @@ Execute a lambda function run - it should SSH in and show you it's disk usage.
 
 # Lambda Package
 
-The tl;dr lambda package that gets uploaded (ie, the `code` directory in this repo that gets zipped, minus the virtualenv dependencies).
+The entry point of the python lambda code is `main.py`. Please refer to that file to see the lambda execution. The lesser involved tl;dr lambda package that gets uploaded below. (ie, the `code` directory in this repo that gets zipped, minus the virtualenv dependencies).
 
 ```
 # note, the secrets get created on terraform apply.
