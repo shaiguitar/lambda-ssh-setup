@@ -1,0 +1,7 @@
+.terraform
+code/secrets/an_ssh_access_lambda-env-an_ssh_access_lambda.pem
+code/secrets/an_ssh_access_lambda-env-an_ssh_access_lambda.pub
+code/secrets/ip_address.txt
+terraform.tfstate
+terraform.tfstate.backup
+ssh_access_lambda.zip
